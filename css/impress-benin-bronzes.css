@@ -217,13 +217,14 @@ a:focus {
 
     font-family: 'Noto Serif', 'DejaVu Serif', serif;
 }
-
+.slide h1 {
+    margin-bottom: 50px;
+}
 .slide q {
     display: block;
     font-size: 50px;
     line-height: 1.5em;
-
-    margin-top: 100px;
+    margin-bottom: 30px;
 }
 
 .slide q strong {
@@ -282,12 +283,16 @@ a:focus {
     font-size: 32px;
 }
 
-/*
-    Second step is nothing special, just a text with a link, so it doesn't need
-    any special styling.
+#social-organisation q,
+#social-organisation h1
+{
+    font-size: 25px;
+}
+#social-organisation h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
 
-    Let's move to 'big thoughts' with centered text and custom font sizes.
-*/
 #hierarchy-overview {
     width: 600px;
     text-align: center;
