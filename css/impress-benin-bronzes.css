@@ -1,33 +1,3 @@
-/*
-    So you like the style of impress.js demo?
-    Or maybe you are just curious how it was done?
-
-    You couldn't find a better place to find out!
-
-    Welcome to the stylesheet impress.js demo presentation.
-
-    Please remember that it is not meant to be a part of impress.js and is
-    not required by impress.js.
-    I expect that anyone creating a presentation for impress.js would create
-    their own set of styles.
-
-    But feel free to read through it and learn how to get the most of what
-    impress.js provides.
-
-    And let me be your guide.
-
-    Shall we begin?
-*/
-
-
-/*
-    We start with a good ol' reset.
-    That's the one by Eric Meyer http://meyerweb.com/eric/tools/css/reset/
-
-    You can probably argue if it is needed here, or not, but for sure it
-    doesn't do any harm and gives us a fresh start.
-*/
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -81,17 +51,18 @@ table {
     And yes, there is a lot of repetition there because of -prefixes but we don't
     want to leave anybody behind.
 */
+
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Noto Serif', 'DejaVu Serif', serif;
     min-height: 740px;
 
-    background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-radial-gradient(rgb(255, 0, 0), rgb(190, 190, 190));
-    background:    -moz-radial-gradient(rgb(255, 0, 0), rgb(190, 190, 190));
-    background:     -ms-radial-gradient(rgb(255, 0, 0), rgb(190, 190, 190));
-    background:      -o-radial-gradient(rgb(255, 0, 0), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(255, 0, 0), rgb(190, 190, 190));
+    /*background-image: url(../background.png);*/
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(210deg, rgba(40,14,0,1) 3%, rgba(0,0,0,1) 20%, rgba(40,14,0,1) 95%, rgba(56,29,0,1) 100%);
+    background: -webkit-linear-gradient(210deg, rgba(40,14,0,1) 3%, rgba(0,0,0,1) 20%, rgba(40,14,0,1) 95%, rgba(56,29,0,1) 100%);
+    background: linear-gradient(210deg, rgba(40,14,0,1) 3%, rgba(0,0,0,1) 20%, rgba(40,14,0,1) 95%, rgba(56,29,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#381d00",GradientType=1);
+
 }
 
 /*
@@ -175,9 +146,10 @@ a:focus {
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
 
-    font-family: 'PT Serif', georgia, serif;
+    font-family: 'Noto Serif', 'DejaVu Serif', serif;
+    color: rgb(255, 255, 255);
     font-size: 48px;
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 /*
@@ -187,7 +159,7 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
+    opacity: 0.2;
 
     -webkit-transition: opacity 1s;
     -moz-transition:    opacity 1s;
@@ -196,7 +168,18 @@ a:focus {
     transition:         opacity 1s;
 }
 
-.impress-enabled .step.active { opacity: 1 }
+#impress .step .substep {
+    margin: 0;
+    opacity: 0.1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+.impress-enabled .step.active, .substep-active { opacity: 1 }
 
 /*
     These 'slide' step styles were heavily inspired by HTML5 Slides:
@@ -213,30 +196,32 @@ a:focus {
     will automatically scale the steps to fit the screen.
 */
 .slide {
-    display: block;
+    display: flex;
+    flex-direction: column;
+/*    justify-content: center;
+    align-items: center;
+*/    border-radius: 20px;
 
-    width: 900px;
-    height: 700px;
-    padding: 40px 60px;
+    width: 800px;
+    height: 600px;
+    padding: 60px 60px;
 
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    background: rgb(0,0,0);
 
-    color: rgb(102, 102, 102);
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+    background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0,0,0,0.5938202932979284) 20%, rgba(0, 0, 0, 0.1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0,0,0,0.5938202932979284) 20%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0,0,0,0.5938202932979284) 20%, rgba(0, 0, 0, 0.1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
 
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: -1px;
+    /*text-shadow: 0 2px 2px rgba(0, 0, 0, .1);*/
+
+    font-family: 'Noto Serif', 'DejaVu Serif', serif;
 }
 
 .slide q {
     display: block;
     font-size: 50px;
-    line-height: 72px;
+    line-height: 1.5em;
 
     margin-top: 100px;
 }
@@ -244,43 +229,53 @@ a:focus {
 .slide q strong {
     white-space: nowrap;
 }
+.slide i {
+    font-size: 20px;
+}
 
-/*
-    And now we start to style each step separately.
+#old-society-2 q {
+    font-size: 40px;
+    padding-bottom: 30px;
+}
 
-    I agree that this may be not the most efficient, object-oriented and
-    scalable way of styling, but most of steps have quite a custom look
-    and typography tricks here and there, so they had to be styled separately.
-
-    First is the title step with a big <h1> (no room for padding) and some
-    3D positioning along Z axis.
-*/
+#old-society-3 q {
+    font-size: 36px;
+    padding-bottom: 24px;
+}
 
 #title {
     padding: 0;
 }
 
-#title .try {
-    font-size: 64px;
-    position: absolute;
-    top: -0.5em;
+#title{
+    font-size: 38px;
     left: 1.5em;
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
 
     -webkit-transform: translateZ(20px);
     -moz-transform:    translateZ(20px);
     -ms-transform:     translateZ(20px);
     -o-transform:      translateZ(20px);
     transform:         translateZ(20px);
+
 }
 
-#title h1 {
-    font-size: 180px;
+#title h1, h2 {
+    font-size: 38px;
 
     -webkit-transform: translateZ(50px);
     -moz-transform:    translateZ(50px);
     -ms-transform:     translateZ(50px);
     -o-transform:      translateZ(50px);
     transform:         translateZ(50px);
+}
+
+#title h1 {
+    font-size: 150px;
+    font-weight: bolder;
 }
 
 #title .footnote {
@@ -293,11 +288,59 @@ a:focus {
 
     Let's move to 'big thoughts' with centered text and custom font sizes.
 */
-#big {
+#hierarchy-overview {
     width: 600px;
     text-align: center;
     font-size: 60px;
-    line-height: 1;
+    left: -10em;
+    top: -12em;
+}
+#hierarchy-overview-1,
+#hierarchy-overview-2,
+#hierarchy-overview-3,
+#hierarchy-overview-4,
+#hierarchy-overview-5
+{
+    position: absolute;
+}
+#hierarchy-overview-1 {
+    /*width: 1000px;*/
+    font-weight: bolder;
+    font-size: 350px;
+    left: -0.2em;
+    /*top: -0em;*/
+}
+#hierarchy-overview-2 {
+    line-height: 0.95;
+    font-weight: bolder;
+    font-size: 100px;
+}
+#hierarchy-overview-3 {
+    font-weight: bold;
+    font-size: 60px;
+}
+#hierarchy-overview-4 {
+    font-weight: bold;
+    font-size: 35px;
+}
+#hierarchy-overview-5{
+    font-size: 20px;
+}
+
+#history-monarchy-1,
+#history-monarchy-2,
+#history-monarchy-3,
+#history-monarchy-4
+{
+    text-align: left;
+    justify-content: left;
+    align-items: baseline;
+    padding: 10px 30px;
+}
+
+.slide#history-monarchy-2 q{
+    font-size: 35px;
+    /*padding-bottom: 10px;*/
 }
 
 #big strong,
